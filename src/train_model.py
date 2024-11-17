@@ -1,17 +1,13 @@
-# train_model.py
-
 import joblib
 from sklearn.model_selection import RandomizedSearchCV
 from sklearn.ensemble import RandomForestRegressor
 import pandas as pd
-
 def train_model():
     train_data = pd.read_csv('data/train_split.csv')
 
     # Розподіл даних на ознаки і цільову змінну
     X_train = train_data.drop('Rent', axis=1)
     y_train = train_data['Rent']
-
 
     # Налаштування гіперпараметрів
     param_dist = {
